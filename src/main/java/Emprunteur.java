@@ -14,7 +14,7 @@ public class Emprunteur {
         stock.add(objet);
     }
 
-    public List<Empruntable> listerMateriel()
+    public List<Empruntable> listeMateriel()
     {
         return stock;
     }

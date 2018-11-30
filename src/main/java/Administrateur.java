@@ -26,12 +26,12 @@ public class Administrateur extends Employe {
     }
     public List<Empruntable> stockEntreprise()
     {
-        return this.entreprise.listerMateriel();
+        return this.entreprise.listeMateriel();
     }
 
     public List<Empruntable> stockAgence()
     {
-        return this.agence.listerMateriel();
+        return this.agence.listeMateriel();
     }
 
     public void transfererMateriel(Emprunteur pre, Empruntable objet, Emprunteur post)
@@ -54,30 +54,30 @@ public class Administrateur extends Employe {
 
     public void suppimerMaterielDefectueuxEntreprise()
     {
-        for (Empruntable e:entreprise.listerMateriel()) {
+        for (Empruntable e:entreprise.listeMateriel()) {
             if(e.isDefectueux())
             {
-                entreprise.listerMateriel().remove(e);
+                entreprise.listeMateriel().remove(e);
             }
         }
     }
 
     public void suppimerMaterielDefectueuxAgence()
     {
-        for (Empruntable e:agence.listerMateriel()) {
+        for (Empruntable e:agence.listeMateriel()) {
             if(e.isDefectueux())
             {
-                agence.listerMateriel().remove(e);
+                agence.listeMateriel().remove(e);
             }
         }
     }
 
     public void suppimerMaterielDefectueuxDe(Emprunteur emprunteur)
     {
-        for (Empruntable e:emprunteur.listerMateriel()) {
+        for (Empruntable e:emprunteur.listeMateriel()) {
             if(e.isDefectueux())
             {
-                emprunteur.listerMateriel().remove(e);
+                emprunteur.listeMateriel().remove(e);
             }
         }
     }

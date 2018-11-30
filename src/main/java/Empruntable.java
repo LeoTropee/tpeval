@@ -9,7 +9,7 @@ public class Empruntable {
     }
     public void declarerDefectueux()
     {
-        defectueux = false;
+        defectueux = true;
     }
     public boolean isDefectueux()
     {

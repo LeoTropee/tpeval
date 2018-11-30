@@ -22,7 +22,12 @@ public class Administrateur extends Employe {
     public boolean recupererMateriel(Empruntable objet, Emprunteur emprun)
     {
 
-        return emprun.perdreMateriel(objet);
+        boolean perdu = emprun.perdreMateriel(objet);
+        if(perdu)
+        {
+            this.ajouterAuStock(objet);
+        }
+        return perdu;
     }
     public List<Empruntable> stockEntreprise()
     {
@@ -36,7 +41,7 @@ public class Administrateur extends Employe {
 
     public void transfererMateriel(Emprunteur pre, Empruntable objet, Emprunteur post)
     {
-        if(pre.perdreMateriel(objet))
+        if(pre.listeMateriel().contains(objet) && ((post instanceof Agence) == objet.isLimitationPretAuxAgences()))
         {
             post.ajouterAuStock(objet);
         }
@@ -54,31 +59,40 @@ public class Administrateur extends Employe {
 
     public void supprimerMaterielDefectueuxEntreprise()
     {
-        for (Empruntable e:entreprise.listeMateriel()) {
-            if(e.isDefectueux())
+        int i=0;
+        while(i<entreprise.listeMateriel().size())
+        {
+            if(entreprise.listeMateriel().get(i).isDefectueux())
             {
-                entreprise.perdreMateriel(e);
+                entreprise.perdreMateriel(entreprise.listeMateriel().get(i));
             }
+            i++;
         }
     }
 
     public void supprimerMaterielDefectueuxAgence()
     {
-        for (Empruntable e:agence.listeMateriel()) {
-            if(e.isDefectueux())
+        int i=0;
+        while(i<agence.listeMateriel().size())
+        {
+            if(agence.listeMateriel().get(i).isDefectueux())
             {
-                agence.perdreMateriel(e);
+                agence.perdreMateriel(agence.listeMateriel().get(i));
             }
+            i++;
         }
     }
 
     public void supprimerMaterielDefectueuxDe(Emprunteur emprunteur)
     {
-        for (Empruntable e:emprunteur.listeMateriel()) {
-            if(e.isDefectueux())
+        int i=0;
+        while(i<emprunteur.listeMateriel().size())
+        {
+            if(emprunteur.listeMateriel().get(i).isDefectueux())
             {
-                emprunteur.perdreMateriel(e);
+                emprunteur.perdreMateriel(emprunteur.listeMateriel().get(i));
             }
+            i++;
         }
     }
 

@@ -4,7 +4,7 @@ public class Empruntable {
 
     public Empruntable()
     {
-        limitationPretAuxAgences = false;
+        limitationPretAuxAgences = false ;
         defectueux = false;
     }
     public void declarerDefectueux()

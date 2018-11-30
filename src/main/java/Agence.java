@@ -8,4 +8,7 @@ public class Agence extends Emprunteur {
         this.nom = nom;
         employes = new ArrayList<Employe>();
     }
+    public ArrayList<Employe> getEmployes() {
+        return employes;
+    }
 }

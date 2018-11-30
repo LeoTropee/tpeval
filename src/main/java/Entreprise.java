@@ -11,9 +11,15 @@ public class Entreprise extends Emprunteur{
 
     public Entreprise(String nom) {
         this.nom = nom;
+        agences = new ArrayList<Agence>();
+        employes = new ArrayList<Employe>();
     }
 
     public ArrayList<Employe> getEmployes() {
         return employes;
+    }
+
+    public ArrayList<Agence> getAgences() {
+        return agences;
     }
 }

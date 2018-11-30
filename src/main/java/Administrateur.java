@@ -52,32 +52,32 @@ public class Administrateur extends Employe {
         }
     }
 
-    public void suppimerMaterielDefectueuxEntreprise()
+    public void supprimerMaterielDefectueuxEntreprise()
     {
         for (Empruntable e:entreprise.listeMateriel()) {
             if(e.isDefectueux())
             {
-                entreprise.listeMateriel().remove(e);
+                entreprise.perdreMateriel(e);
             }
         }
     }
 
-    public void suppimerMaterielDefectueuxAgence()
+    public void supprimerMaterielDefectueuxAgence()
     {
         for (Empruntable e:agence.listeMateriel()) {
             if(e.isDefectueux())
             {
-                agence.listeMateriel().remove(e);
+                agence.perdreMateriel(e);
             }
         }
     }
 
-    public void suppimerMaterielDefectueuxDe(Emprunteur emprunteur)
+    public void supprimerMaterielDefectueuxDe(Emprunteur emprunteur)
     {
         for (Empruntable e:emprunteur.listeMateriel()) {
             if(e.isDefectueux())
             {
-                emprunteur.listeMateriel().remove(e);
+                emprunteur.perdreMateriel(e);
             }
         }
     }

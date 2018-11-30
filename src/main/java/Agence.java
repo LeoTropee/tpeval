@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Agence {
+public class Agence extends Emprunteur {
     private String nom;
     private ArrayList<Employe> employes;
 

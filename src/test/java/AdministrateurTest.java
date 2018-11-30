@@ -161,4 +161,12 @@ public class AdministrateurTest {
             Assert.assertEquals("supprimerMaterielDefectueuxAgence_avecMaterielDefectueux: fail car il reste un Empruntable defectueux", false, e.isDefectueux());
         }
     }
+
+    @Test
+    public void achatMaterielTest() {
+        Ecran ecr = new Ecran();
+        int stockEntreprise = ((Administrateur) admin).stockEntreprise().size();
+        ((Administrateur)admin).achatMateriel(ecr);
+        Assert.assertEquals(stockEntreprise + 1,((Administrateur) admin).stockEntreprise().size());
+    }
 }

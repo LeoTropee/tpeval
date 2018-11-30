@@ -96,5 +96,9 @@ public class Administrateur extends Employe {
         }
     }
 
+    public void achatMateriel(Empruntable e)
+    {
+        entreprise.ajouterAuStock(e);
+    }
 
 }
